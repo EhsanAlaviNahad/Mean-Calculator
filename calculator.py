@@ -3,8 +3,6 @@ from colorama import Fore, Style
 
 colorama.init(autoreset=True)
 
-print(Fore.CYAN + "Welcome.")
-
 while True:
     numbers = input("Enter Your Amount: ")
 
@@ -16,9 +14,13 @@ while True:
 
     numbers_list = list(map(float, numbers))
 
-    #Calculation
+    # Calculation
     mean = sum(numbers_list) / len(numbers_list)
-    
-    #Result
+
+    # Result
     print(Fore.GREEN + f"Avarage: {mean:.2f}")
-    break
+    
+    # Ask if the user wants to try again
+    try_again = input(Fore.CYAN + "Do you want to try again? (y/n): ").strip().lower()
+    if try_again != "y":
+        break
